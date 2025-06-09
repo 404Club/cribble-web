@@ -2,6 +2,36 @@
 
 import { useState, useEffect } from 'react'
 
+// Animated Counter Component
+function AnimatedCounter({ target, duration = 2000 }: { target: number; duration?: number }) {
+  const [count, setCount] = useState(0)
+
+  useEffect(() => {
+    if (target === 0) {
+      setCount(0)
+      return
+    }
+
+    let currentCount = 0
+    const increment = target > 50 ? Math.ceil(target / 50) : 1 // Speed up for large numbers
+    const stepDuration = duration / (target / increment)
+
+    const timer = setInterval(() => {
+      currentCount += increment
+      if (currentCount >= target) {
+        setCount(target)
+        clearInterval(timer)
+      } else {
+        setCount(currentCount)
+      }
+    }, stepDuration)
+
+    return () => clearInterval(timer)
+  }, [target, duration])
+
+  return <span>{count}</span>
+}
+
 export default function Home() {
   const [email, setEmail] = useState('')
   const [isSubmitted, setIsSubmitted] = useState(false)
@@ -150,7 +180,7 @@ export default function Home() {
         </form>
 
         <p className="text-gray-600 text-xs">
-          {waitlistCount} developers waiting
+          <AnimatedCounter target={waitlistCount} /> developers waiting
         </p>
       </div>
       
