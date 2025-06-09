@@ -31,8 +31,8 @@ export default function Home() {
         if (response.ok) {
           setWaitlistCount(data.count || 0)
         }
-      } catch (error) {
-        console.error('Failed to fetch waitlist count:', error)
+      } catch (err) {
+        console.error('Failed to fetch waitlist count:', err)
       }
     }
 
@@ -61,7 +61,7 @@ export default function Home() {
       } else {
         setError(data.error || 'Failed to join waitlist')
       }
-    } catch (error) {
+    } catch (err) {
       setError('Network error. Please try again.')
     } finally {
       setIsLoading(false)
@@ -81,10 +81,10 @@ export default function Home() {
       <main className="min-h-screen bg-black flex flex-col items-center justify-center px-4" style={backgroundStyle}>
         <div className="max-w-lg w-full text-center">
           <h1 className="text-3xl md:text-4xl font-normal text-white mb-4">
-            You're on the waitlist! 🎉
+            You&apos;re on the waitlist! 🎉
           </h1>
           <p className="text-gray-400 text-base">
-            We'll let you know when we're ready to launch.
+            We&apos;ll let you know when we&apos;re ready to launch.
           </p>
         </div>
         
