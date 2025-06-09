@@ -7,6 +7,8 @@
 cribble tracks your ai tool usage across chatgpt, claude, github copilot, and 40+ other tools. install the browser extension, code normally, and see where you rank among developers worldwide.
 
 **the idea:** consistency beats intelligence. use ai tools regularly, build better habits, climb the leaderboard.
+<img src="https://github.com/404Club/cribble-web/blob/main/public/preview.png" alt="preview" width="700" height="450">\
+join the waitlist now! -> https://cribble-web.vercel.app/
 
 ## how it works
 
