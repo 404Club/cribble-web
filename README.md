@@ -1,91 +1,36 @@
-# 🏆 cribble.dev
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-> A worldwide leaderboard for AI-powered developers. Be in the leaderboard by doing what you love :)
+## Getting Started
 
-## ✨ Features
-
-- **Minimal design** with dotted grid background\
-- **Real-time waitlist collection** via Supabase\
-- **Fast & responsive** built on Next.js 14\
-- **TypeScript** for type safety
-
-## 📦 Installation
+First, run the development server:
 
 ```bash
-# Clone the repository
-git clone https://github.com/404Club/cribble-web.git
-cd cribble-web/frontend
-
-# Install dependencies
-npm install
-
-# Set up environment variables
-cp .env.example .env.local
-# Add your Supabase credentials
-
-# Start development server
 npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-## 🔧 Environment Variables
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-Create a `.env.local` file in the frontend directory:
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-```env
-NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
-```
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## 🗄️ Database Setup
+## Learn More
 
-Run this SQL in your Supabase SQL editor:
+To learn more about Next.js, take a look at the following resources:
 
-```sql
--- Create waitlist table
-CREATE TABLE waitlist (
-  id uuid DEFAULT gen_random_uuid() PRIMARY KEY,
-  email text UNIQUE NOT NULL,
-  created_at timestamp with time zone DEFAULT timezone('utc'::text, now()) NOT NULL
-);
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
--- Enable Row Level Security
-ALTER TABLE waitlist ENABLE ROW LEVEL SECURITY;
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
--- Create policies
-CREATE POLICY "Allow inserts for waitlist" ON waitlist FOR INSERT WITH CHECK (true);
-CREATE POLICY "Allow reads for waitlist" ON waitlist FOR SELECT USING (true);
-```
+## Deploy on Vercel
 
-## 🎯 What is cribble?
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-cribble is building the ultimate leaderboard for AI-powered developers. Track your usage across ChatGPT, Claude, GitHub Copilot, and 40+ AI tools, then compete with developers worldwide via an extension you just leave on. 
-
-- **Global rankings** of AI usage  
-- **Gamified development** experience
-- **Community-driven** competition
-
-## 🤝 Contributing
-
-I'm building in public! Contributions are welcome:
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Submit a pull request
-
-## 📄 License
-
-MIT License - feel free to use this for your own projects!
-
-## 🔗 Links
-
-- **Website:** [cribble.dev](https://cribble.dev)
-- **X:** [@birdabo404](https://x.com/birdabo404)
-- **Creator:** @404Club 
-
----
-
-<div align="center">
-  <p><strong>backed by no one.</strong></p>
-  <p>Made with ❤️ by birdabo & cursor, for developers</p>
-</div>
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
