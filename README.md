@@ -1,8 +1,6 @@
 # 🏆 cribble.dev
 
-> A worldwide leaderboard for AI-powered developers
-
-Beautiful, minimal landing page for the upcoming AI usage tracking platform. Built with Next.js 14, Tailwind CSS, and interactive cursor effects.
+> A worldwide leaderboard for AI-powered developers. Be in the leaderboard by doing what you love :)
 
 ## ✨ Features
 
@@ -83,7 +81,7 @@ MIT License - feel free to use this for your own projects!
 
 - **Website:** [cribble.dev](https://cribble.dev)
 - **X:** [@birdabo404](https://x.com/birdabo404)
-- **Creator:** 404Club 
+- **Creator:** @404Club 
 
 ---
 
