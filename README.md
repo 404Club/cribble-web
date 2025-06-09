@@ -6,25 +6,10 @@ Beautiful, minimal landing page for the upcoming AI usage tracking platform. Bui
 
 ## ✨ Features
 
-- 🎨 **Minimal design** with dotted grid background
-- 🌟 **Interactive cursor glow effect**
-- 📧 **Real-time waitlist collection** via Supabase
-- 📊 **Analytics** via Vercel Analytics  
-- ⚡ **Fast & responsive** built on Next.js 14
-- 🎯 **TypeScript** for type safety
-
-## 🚀 Live Demo
-
-[cribble.dev](https://cribble.dev) (coming soon)
-
-## 🛠️ Tech Stack
-
-- **Framework:** Next.js 14
-- **Styling:** Tailwind CSS 3.4
-- **Database:** Supabase
-- **Analytics:** Vercel Analytics
-- **Deployment:** Vercel
-- **Language:** TypeScript
+- **Minimal design** with dotted grid background\
+- **Real-time waitlist collection** via Supabase\
+- **Fast & responsive** built on Next.js 14\
+- **TypeScript** for type safety
 
 ## 📦 Installation
 
@@ -75,16 +60,15 @@ CREATE POLICY "Allow reads for waitlist" ON waitlist FOR SELECT USING (true);
 
 ## 🎯 What is cribble?
 
-cribble is building the ultimate leaderboard for AI-powered developers. Track your usage across ChatGPT, Claude, GitHub Copilot, and 40+ AI tools, then compete with developers worldwide.
+cribble is building the ultimate leaderboard for AI-powered developers. Track your usage across ChatGPT, Claude, GitHub Copilot, and 40+ AI tools, then compete with developers worldwide via an extension you just leave on. 
 
-- 🏆 **Global rankings** of AI usage
-- 📊 **Detailed analytics** and insights  
-- 🎮 **Gamified development** experience
-- 🌍 **Community-driven** competition
+- **Global rankings** of AI usage  
+- **Gamified development** experience
+- **Community-driven** competition
 
 ## 🤝 Contributing
 
-We're building in public! Contributions are welcome:
+I'm building in public! Contributions are welcome:
 
 1. Fork the repository
 2. Create a feature branch
@@ -98,12 +82,12 @@ MIT License - feel free to use this for your own projects!
 ## 🔗 Links
 
 - **Website:** [cribble.dev](https://cribble.dev)
-- **Twitter:** [@birdabo404](https://x.com/birdabo404)
-- **Creator:** Building solo, backed by no one 😎
+- **X:** [@birdabo404](https://x.com/birdabo404)
+- **Creator:** 404Club 
 
 ---
 
 <div align="center">
   <p><strong>backed by no one.</strong></p>
-  <p>Made with ❤️ by developers, for developers</p>
+  <p>Made with ❤️ by birdabo & cursor, for developers</p>
 </div>
