@@ -28,6 +28,27 @@ function isDisposableEmail(email: string): boolean {
   return DISPOSABLE_DOMAINS.includes(domain) || domain?.includes('temp') || domain?.includes('trash')
 }
 
+// Block suspicious user agents (bots, scripts, etc.)
+function isSuspiciousUserAgent(userAgent: string): boolean {
+  const suspiciousPatterns = [
+    'python-requests',
+    'curl/',
+    'wget/',
+    'axios/',
+    'node-fetch',
+    'postmanruntime',
+    'insomnia',
+    'httpie',
+    'bot',
+    'crawler',
+    'spider',
+    'scraper'
+  ]
+  
+  const lowerAgent = userAgent.toLowerCase()
+  return suspiciousPatterns.some(pattern => lowerAgent.includes(pattern))
+}
+
 export async function POST(request: NextRequest) {
   try {
     // Get IP address for rate limiting
@@ -53,6 +74,15 @@ export async function POST(request: NextRequest) {
       }
     } else {
       rateLimitMap.set(ip, { count: 1, resetTime: now + RATE_LIMIT_WINDOW })
+    }
+
+    // Block suspicious user agents (scripts, bots, etc.)
+    const userAgent = request.headers.get('user-agent') || 'unknown'
+    if (isSuspiciousUserAgent(userAgent)) {
+      return NextResponse.json(
+        { error: 'Automated requests are not allowed' },
+        { status: 403 }
+      )
     }
 
     const { email } = await request.json()
@@ -102,7 +132,7 @@ export async function POST(request: NextRequest) {
       .insert([{ 
         email, 
         ip_address: ip,
-        user_agent: request.headers.get('user-agent') || 'unknown'
+        user_agent: userAgent
       }])
       .select()
 
@@ -158,4 +188,4 @@ export async function GET() {
       { status: 500 }
     )
   }
-} 
+}
