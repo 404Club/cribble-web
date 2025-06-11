@@ -1,10 +1,10 @@
 # cribble
 
-> track ai usage while you code, compete by consistency not brains
+> compete by consistency not brains. gamify the leaderboard.
 
 ## what is this?
 
-cribble tracks your ai tool usage across chatgpt, claude, github copilot, and 40+ other tools. install the browser extension, code normally, and see where you rank among developers worldwide.
+cribble is a global leaderboard which uses extension to tracks your ai tool usage across chatgpt, claude, github copilot, and 40+ LLMs. install the browser extension and see where you rank among developers worldwide.
 
 **the idea:** consistency beats intelligence. use ai tools regularly, build better habits, climb the leaderboard.
 <img src="https://github.com/404Club/cribble-web/blob/main/public/preview.png" alt="preview" width="700" height="450">\
